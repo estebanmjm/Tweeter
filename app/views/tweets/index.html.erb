@@ -1,10 +1,21 @@
 <h1>Lista de Tweets</h1>
 
+<%= link_to "Agregar Tweet", new_tweet_path %>
+
 <ol>
 	<% @tweets.each do |tweet| %>
 
-		<li><%= tweet.message %></li>
+		<li>
+		<%= tweet.message %>
+		<%= link_to"editar", edit_tweet_path(tweet)%> <!--el tweet entre parentesis es el id que se le pasa a la ruta -->
+		</li>
 
 	<% end %>
 </ol>
+<h2>Los tweets de Bootcamp</h2>
+<ul>
+	<% @tweets_b.each do |tweet| %>
+		<li><%= tweet.message %></li>
+	<% end %>
+</ul>
 

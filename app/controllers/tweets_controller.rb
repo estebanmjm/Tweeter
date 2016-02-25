@@ -2,6 +2,7 @@ class TweetsController < ApplicationController
 
 	def index
 		@tweets = Tweet.all
+		@tweets_b = User.find(2).tweets
 	end
 
 	def new
@@ -10,7 +11,10 @@ class TweetsController < ApplicationController
 
 	def edit
 		@tweet = Tweet.find(params[:id])
+	end
 
+	def show
+		@tweet = Tweet.find(params[:id])
 	end
 
 	def create

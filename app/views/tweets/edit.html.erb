@@ -1,6 +1,7 @@
 <h1>Editar Tweet</h1>
 
 <%= form_for @tweet do |f| %>
+<%= link_to "ver todos", tweets_path %>
 
   <p>
     <%= f.label :message, "Tweet" %><br>
