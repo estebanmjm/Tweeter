@@ -1,3 +1,24 @@
-<h1>Mi tweets</h1>
+<h1>Mi tweet</h1>
 
-<%= @tweet.message %>
+<%= form_for @tweet.message do |f| %> 
+ <p>
+   <%= f.label :message, "Tweet" %><br>
+   <%= f.text_area :message %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+<% end %>
+
+<%= form_for @tweet_nuevo do |f| %>  
+<p>
+   <%= f.label :message, "Tweet" %><br>
+   <%= f.text_area :message %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+   
+ </p>
+<% end %>

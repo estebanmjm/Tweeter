@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
 	def index
 		@tweets = Tweet.all
-		@tweets_de_bootcamp = User.find(1).tweet
+		@tweets_de_bootcamp = User.find(1).tweets
 	end
 
 	def new
@@ -15,6 +15,7 @@ class TweetsController < ApplicationController
 
 	def show
 		@tweet = Tweet.find(params[:id])
+		@tweet_nuevo = Tweet.new 
 	end
 
 	def create
@@ -27,6 +28,12 @@ class TweetsController < ApplicationController
 	def update
 		@tweet = Tweet.find(params[:id])
 		@tweet.update(tweet_params)
+		redirect_to tweets_path
+	end
+
+	def destroy
+		@tweet = Tweet.find(params[:id])
+		@tweet.destroy
 		redirect_to tweets_path
 	end
 

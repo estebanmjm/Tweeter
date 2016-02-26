@@ -2915,3 +2915,1336 @@ Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 11:52:0
 
 
 Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 11:52:00 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2016-02-26 14:15:13 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html within layouts/application (0.7ms)
+Completed 200 OK in 86ms (Views: 76.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 14:15:14 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 14:15:14 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 14:15:14 -0500
+
+
+Started GET "/tweets/" for 127.0.0.1 at 2016-02-26 14:15:26 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 90ms (Views: 46.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/tweets/" for 127.0.0.1 at 2016-02-26 14:16:48 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.2ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 49ms (Views: 34.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 14:16:48 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 14:16:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 14:16:48 -0500
+
+
+Started GET "/tweets/" for 127.0.0.1 at 2016-02-26 14:16:51 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 14:16:51 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 14:16:51 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 14:16:51 -0500
+
+
+Started GET "/tweets/12/edit" for 127.0.0.1 at 2016-02-26 14:28:39 -0500
+Processing by TweetsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 12]]
+  Rendered tweets/edit.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 52ms (Views: 47.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 14:28:39 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 14:28:39 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 14:28:39 -0500
+
+
+Started PATCH "/tweets/12" for 127.0.0.1 at 2016-02-26 14:28:50 -0500
+Processing by TweetsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "tweet"=>{"message"=>"we are wtm"}, "commit"=>"Update Tweet", "id"=>"12"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 12]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "tweets" SET "message" = ?, "updated_at" = ? WHERE "tweets"."id" = 12  [["message", "we are wtm"], ["updated_at", "2016-02-26 19:28:50.448946"]]
+  [1m[36m (21.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 24ms (ActiveRecord: 21.4ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 14:28:50 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 39ms (Views: 35.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 14:28:50 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 14:28:50 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 14:28:50 -0500
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:07:40 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 54ms (Views: 43.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:07:40 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:07:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:07:40 -0500
+
+
+Started GET "/tweets/8" for 127.0.0.1 at 2016-02-26 16:07:48 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered tweets/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 26ms (Views: 20.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:07:48 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:07:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:07:48 -0500
+
+
+Started GET "/tweets/2" for 127.0.0.1 at 2016-02-26 16:09:29 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tweets/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 22ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:09:29 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:09:29 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:09:29 -0500
+
+
+Started GET "/tweets/6" for 127.0.0.1 at 2016-02-26 16:11:04 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tweets/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 28ms (Views: 26.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:11:04 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:11:04 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:11:04 -0500
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:14:03 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.2ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:14:03 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:14:03 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:14:03 -0500
+
+
+Started GET "/tweets/3" for 127.0.0.1 at 2016-02-26 16:14:06 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered tweets/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:14:06 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:14:06 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:14:06 -0500
+
+
+Started GET "/tweets/3" for 127.0.0.1 at 2016-02-26 16:16:16 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered tweets/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:16:16 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:16:16 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:16:16 -0500
+
+
+Started GET "/tweets/1" for 127.0.0.1 at 2016-02-26 16:16:20 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered tweets/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:16:20 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:16:20 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:16:20 -0500
+
+
+Started GET "/tweets/new" for 127.0.0.1 at 2016-02-26 16:16:36 -0500
+Processing by TweetsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered tweets/new.html.erb within layouts/application (7.6ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (undefined method `nombre' for #<User:0xa0d91d4>):
+     8:   </p>
+     9: 
+    10:   <p>
+    11:     <%= f.select :user_id, User.all.collect{|u|[u.nombre, u.id]} %>
+    12:    </p>
+    13: 
+    14:   <p>
+  app/views/tweets/new.html.erb:11:in `block (2 levels) in _app_views_tweets_new_html_erb__681855270_84388610'
+  app/views/tweets/new.html.erb:11:in `block in _app_views_tweets_new_html_erb__681855270_84388610'
+  app/views/tweets/new.html.erb:3:in `_app_views_tweets_new_html_erb__681855270_84388610'
+
+
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.9ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.5ms)
+
+
+Started GET "/tweets/new" for 127.0.0.1 at 2016-02-26 16:17:38 -0500
+Processing by TweetsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered tweets/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 29ms (Views: 24.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:17:38 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:17:38 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:17:38 -0500
+
+
+Started GET "/tweets/3" for 127.0.0.1 at 2016-02-26 16:17:56 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered tweets/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 38ms (Views: 36.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:17:56 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:17:56 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:17:56 -0500
+
+
+Started GET "/tweets/8" for 127.0.0.1 at 2016-02-26 16:20:10 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered tweets/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:10 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:10 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:10 -0500
+
+
+Started GET "/tweets/6" for 127.0.0.1 at 2016-02-26 16:20:16 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tweets/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:17 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:17 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:17 -0500
+
+
+Started GET "/tweets/11" for 127.0.0.1 at 2016-02-26 16:20:20 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mTweet Load (0.7ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 11]]
+  Rendered tweets/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:20 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:20 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:20:20 -0500
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:25:59 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.3ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:25:59 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:25:59 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:25:59 -0500
+
+
+Started GET "/tweets/8" for 127.0.0.1 at 2016-02-26 16:26:02 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered tweets/show.html.erb within layouts/application (2.1ms)
+Completed 500 Internal Server Error in 9ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+     9:  <p>
+    10:    <%= f.submit %>
+    11:  </p>
+    12: <% end %><%= form_for @tweet_nuevo do |f| %>  <p>
+    13:    <%= f.label :message, "Tweet" %><br>
+    14:    <%= f.text_area :message %>
+    15:  </p>
+  app/views/tweets/show.html.erb:12:in `_app_views_tweets_show_html_erb__38926821_83174880'
+
+
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.1ms)
+
+
+Started GET "/tweets/8" for 127.0.0.1 at 2016-02-26 16:27:01 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered tweets/show.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    11:  </p>
+    12: <% end %>
+    13: 
+    14: <%= form_for @tweet_nuevo do |f| %>  
+    15: <p>
+    16:    <%= f.label :message, "Tweet" %><br>
+    17:    <%= f.text_area :message %>
+  app/views/tweets/show.html.erb:14:in `_app_views_tweets_show_html_erb__38926821_82181710'
+
+
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.2ms)
+
+
+Started GET "/tweets/8" for 127.0.0.1 at 2016-02-26 16:29:05 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered tweets/show.html.erb within layouts/application (1.7ms)
+Completed 500 Internal Server Error in 8ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    11:  </p>
+    12: <% end %>
+    13: 
+    14: <%= form_for @tweet_nuevo do |f| %>  
+    15: <p>
+    16:    <%= f.label :message, "Tweet" %><br>
+    17:    <%= f.text_area :message %>
+  app/views/tweets/show.html.erb:14:in `_app_views_tweets_show_html_erb__38926821_76308140'
+
+
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (29.1ms)
+
+
+Started GET "/tweets/6" for 127.0.0.1 at 2016-02-26 16:29:08 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tweets/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 6ms
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    11:  </p>
+    12: <% end %>
+    13: 
+    14: <%= form_for @tweet_nuevo do |f| %>  
+    15: <p>
+    16:    <%= f.label :message, "Tweet" %><br>
+    17:    <%= f.text_area :message %>
+  app/views/tweets/show.html.erb:14:in `_app_views_tweets_show_html_erb__38926821_76308140'
+
+
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.0ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.8ms)
+
+
+Started GET "/tweets/6" for 127.0.0.1 at 2016-02-26 16:30:50 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered tweets/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 41ms (Views: 28.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:50 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:50 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:50 -0500
+
+
+Started GET "/tweets/6" for 127.0.0.1 at 2016-02-26 16:30:50 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tweets/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:50 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:50 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:50 -0500
+
+
+Started GET "/tweets/3" for 127.0.0.1 at 2016-02-26 16:30:54 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered tweets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:54 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:54 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:54 -0500
+
+
+Started GET "/tweets/8" for 127.0.0.1 at 2016-02-26 16:30:58 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered tweets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:58 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:58 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:30:58 -0500
+
+
+Started GET "/tweets/new" for 127.0.0.1 at 2016-02-26 16:31:31 -0500
+Processing by TweetsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered tweets/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 37ms (Views: 36.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:31 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:31 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:31 -0500
+
+
+Started GET "/tweets/8/edit" for 127.0.0.1 at 2016-02-26 16:31:42 -0500
+Processing by TweetsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered tweets/edit.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:42 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:42 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:42 -0500
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:31:47 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.3ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 31ms (Views: 27.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:48 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:48 -0500
+
+
+Started GET "/tweets/6" for 127.0.0.1 at 2016-02-26 16:31:49 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tweets/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:49 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:49 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:49 -0500
+
+
+Started GET "/tweets/3" for 127.0.0.1 at 2016-02-26 16:31:59 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 3]]
+  Rendered tweets/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:59 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:59 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:31:59 -0500
+
+
+Started POST "/tweets/3" for 127.0.0.1 at 2016-02-26 16:32:11 -0500
+
+ActionController::RoutingError (No route matches [POST] "/tweets/3"):
+  actionpack (4.1.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.8) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.8) lib/action_dispatch/middleware/static.rb:84:in `call'
+  rack (1.5.5) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.8) lib/rails/engine.rb:514:in `call'
+  railties (4.1.8) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /home/esteban/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /home/esteban/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /home/esteban/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendered /home/esteban/.rvm/gems/ruby-2.2.1/gems/actionpack-4.1.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (47.4ms)
+
+
+Started GET "/tweets/6" for 127.0.0.1 at 2016-02-26 16:37:53 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 6]]
+  Rendered tweets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 1250ms (Views: 1247.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:37:54 -0500
+
+
+Started GET "/tweets/8" for 127.0.0.1 at 2016-02-26 16:40:57 -0500
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 8]]
+  Rendered tweets/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 70ms (Views: 68.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:40:57 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:40:57 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:40:57 -0500
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:41:12 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.2ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 83ms (Views: 80.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:13 -0500
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.0ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 90ms (Views: 86.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:14 -0500
+
+
+Started DELETE "/tweets/11" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+Processing by TweetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "id"=>"11"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 11]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "tweets" WHERE "tweets"."id" = ?[0m  [["id", 11]]
+  [1m[35m (34.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 41ms (ActiveRecord: 35.1ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.2ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 78ms (Views: 75.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:30 -0500
+
+
+Started DELETE "/tweets/5" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+Processing by TweetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "id"=>"5"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "tweets" WHERE "tweets"."id" = ?  [["id", 5]]
+  [1m[36m (39.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 44ms (ActiveRecord: 39.5ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 89ms (Views: 85.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:35 -0500
+
+
+Started DELETE "/tweets/4" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+Processing by TweetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "id"=>"4"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "tweets" WHERE "tweets"."id" = ?[0m  [["id", 4]]
+  [1m[35m (13.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 18ms (ActiveRecord: 13.8ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 75ms (Views: 73.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:41:38 -0500
+
+
+Started DELETE "/tweets/8" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+Processing by TweetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "id"=>"8"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "tweets" WHERE "tweets"."id" = ?  [["id", 8]]
+  [1m[36m (35.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 40ms (ActiveRecord: 36.2ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 83ms (Views: 80.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:26 -0500
+
+
+Started DELETE "/tweets/13" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+Processing by TweetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "id"=>"13"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "tweets" WHERE "tweets"."id" = ?[0m  [["id", 13]]
+  [1m[35m (31.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 35ms (ActiveRecord: 31.3ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 81ms (Views: 78.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:35 -0500
+
+
+Started DELETE "/tweets/1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+Processing by TweetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "id"=>"1"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "tweets" WHERE "tweets"."id" = ?  [["id", 1]]
+  [1m[36m (40.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 44ms (ActiveRecord: 41.0ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 76ms (Views: 73.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:40 -0500
+
+
+Started DELETE "/tweets/10" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+Processing by TweetsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "id"=>"10"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets"  WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "tweets" WHERE "tweets"."id" = ?[0m  [["id", 10]]
+  [1m[35m (58.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 62ms (ActiveRecord: 58.5ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 65ms (Views: 61.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:44:48 -0500
+
+
+Started GET "/tweets/new" for 127.0.0.1 at 2016-02-26 16:45:19 -0500
+Processing by TweetsController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users"
+  Rendered tweets/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 83ms (Views: 82.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/tweets/new" for 127.0.0.1 at 2016-02-26 16:49:50 -0500
+Processing by TweetsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered tweets/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 81ms (Views: 75.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/tweets" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+Processing by TweetsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "tweet"=>{"message"=>"se como yo-Jose", "user_id"=>"2"}, "commit"=>"Create Tweet"}
+Unpermitted parameters: user_id
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "tweets" ("created_at", "message", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", "2016-02-26 21:50:58.150444"], ["message", "se como yo-Jose"], ["updated_at", "2016-02-26 21:50:58.150444"]]
+  [1m[35m (38.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/tweets
+Completed 302 Found in 43ms (ActiveRecord: 38.7ms)
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+Processing by TweetsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?[0m  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 86ms (Views: 82.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 16:50:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreatePictures (20160226220258)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "pictures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "photo" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160226220258"]]
+  [1m[36m (34.2ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/tweets" for 127.0.0.1 at 2016-02-26 17:09:56 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mTweet Load (0.2ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mTweet Load (0.1ms)[0m  SELECT "tweets".* FROM "tweets"  WHERE "tweets"."user_id" = ?  [["user_id", 1]]
+  Rendered tweets/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 645ms (Views: 564.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 17:09:57 -0500
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2016-02-26 17:09:57 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-02-26 17:09:57 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 17:09:57 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 17:09:58 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 17:09:58 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 17:09:58 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 17:09:58 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 17:09:58 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 17:09:58 -0500
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2016-02-26 17:09:58 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 17:09:58 -0500
+
+
+Started GET "/pictures" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 93ms (Views: 91.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 17:10:24 -0500
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2016-02-26 17:10:48 -0500
+Processing by PicturesController#new as HTML
+  Rendered pictures/_form.html.erb (24.1ms)
+  Rendered pictures/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 131ms (Views: 129.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/pictures" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+Processing by PicturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5RhRMBiPB3HrbkmELLGH/qJ0elSG0cMoPoQGIUdMTZ8=", "picture"=>{"photo"=>"hola, soy una imagen", "user_id"=>"1"}, "commit"=>"Create Picture"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "pictures" ("created_at", "photo", "updated_at", "user_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2016-02-26 22:11:11.106030"], ["photo", "hola, soy una imagen"], ["updated_at", "2016-02-26 22:11:11.106030"], ["user_id", 1]]
+  [1m[35m (22.6ms)[0m  commit transaction
+Redirected to http://localhost:3000/pictures/1
+Completed 302 Found in 30ms (ActiveRecord: 23.0ms)
+
+
+Started GET "/pictures/1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+Processing by PicturesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPicture Load (0.2ms)[0m  [1mSELECT  "pictures".* FROM "pictures"  WHERE "pictures"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered pictures/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 92ms (Views: 90.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/tweets.css?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/turbolinks.js?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/pictures.js?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/tweets.js?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/pictures.css?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2016-02-26 17:11:11 -0500
+
+
+Started GET "/pictures" for 127.0.0.1 at 2016-02-26 17:11:16 -0500
+Processing by PicturesController#index as HTML
+  [1m[35mPicture Load (0.2ms)[0m  SELECT "pictures".* FROM "pictures"
+  Rendered pictures/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 89ms (Views: 87.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/pictures/new" for 127.0.0.1 at 2016-02-26 17:11:48 -0500
+Processing by PicturesController#new as HTML
+  Rendered pictures/_form.html.erb (1.4ms)
+  Rendered pictures/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 89ms (Views: 88.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/pictures" for 127.0.0.1 at 2016-02-26 17:12:54 -0500
+Processing by PicturesController#index as HTML
+  [1m[36mPicture Load (0.1ms)[0m  [1mSELECT "pictures".* FROM "pictures"[0m
+  Rendered pictures/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 86ms (Views: 85.2ms | ActiveRecord: 0.1ms)
