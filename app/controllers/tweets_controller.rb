@@ -2,7 +2,7 @@ class TweetsController < ApplicationController
 
 	def index
 		@tweets = Tweet.all
-		@tweets_b = User.find(2).tweets
+		@tweets_de_bootcamp = User.find(1).tweet
 	end
 
 	def new
